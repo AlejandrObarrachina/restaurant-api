@@ -1,28 +1,25 @@
 package com.restaurantapi.restaurantcrud.model;
 
-import jakarta.persistence.*;
+
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 
-@Entity(name = "Restaurant")
 public class Restaurant {
-
-    @jakarta.persistence.Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    @NotBlank
+    @NotBlank(message = "Name not found")
     private String name;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "address_id", referencedColumnName = "id")
-    @NotNull(message = "We need an address to save this restaurant")
     private Address address;
+    @NotBlank(message = "Gastronomy type not found")
     private String gastronomy = "Undefined";
-    @NotNull(message = "We need a rating to save this restaurant")
+
+    @NotNull(message = "Rating not found")
     private Integer rating;
 
+    @NotNull(message = "Price not found")
     private Integer price;
 
-    public Restaurant(){};
+    public Restaurant() {
+    }
 
     public Restaurant(String name, Address address, String gastronomy, Integer rating, Integer price) {
         this.name = name;
