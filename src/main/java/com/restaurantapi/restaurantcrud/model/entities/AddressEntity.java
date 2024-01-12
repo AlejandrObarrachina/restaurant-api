@@ -1,16 +1,28 @@
-package com.restaurantapi.restaurantcrud.model;
-import jakarta.validation.constraints.NotBlank;
+package com.restaurantapi.restaurantcrud.model.entities;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
-public class Address {
+@Entity(name = "address")
+public class AddressEntity {
+    @Id
+    @GeneratedValue(strategy= GenerationType.AUTO)
     private Long id;
-//TODO: Create validations for this model
     private String street;
     private Integer number;
     private String city;
     private String postCode;
 
-    public Address() {
+    public AddressEntity(String street, Integer number, String city, String postCode) {
+        this.street = street;
+        this.number = number;
+        this.city = city;
+        this.postCode = postCode;
+    }
+
+    public AddressEntity() {
     }
 
     public Long getId() {
