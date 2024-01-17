@@ -16,16 +16,27 @@ public class RestaurantEntity {
     private String gastronomy;
     private Integer rating;
     private Integer price;
+    private String imageUrl;
+
 
     public RestaurantEntity() {
     }
 
-    public RestaurantEntity(String name, AddressEntity address, String gastronomy, Integer rating, Integer price) {
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public RestaurantEntity(String name, AddressEntity address, String gastronomy, Integer rating, Integer price, String imageUrl) {
         this.name = name;
         this.address = address;
         this.gastronomy = gastronomy;
         this.rating = rating;
         this.price = price;
+        this.imageUrl = imageUrl;
     }
 
     public Long getId() {

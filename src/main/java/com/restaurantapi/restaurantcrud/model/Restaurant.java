@@ -17,16 +17,25 @@ public class Restaurant {
 
     @NotNull(message = "Price not found")
     private Integer price;
-
+    private String imageUrl;
     public Restaurant() {
     }
 
-    public Restaurant(String name, Address address, String gastronomy, Integer rating, Integer price) {
+    public Restaurant(String name, Address address, String gastronomy, Integer rating, Integer price, String imageUrl) {
         this.name = name;
         this.address = address;
         this.gastronomy = gastronomy;
         this.rating = rating;
         this.price = price;
+        this.imageUrl = imageUrl;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
     public Address getAddress() {
