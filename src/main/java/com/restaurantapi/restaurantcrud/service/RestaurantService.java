@@ -16,12 +16,10 @@ import java.util.Optional;
 public class RestaurantService {
     private final RestaurantRepository repository;
     private final RestaurantMapper restaurantMapper;
-    private final ScrappingService scrappingService;
 
-    public RestaurantService(RestaurantRepository repository, RestaurantMapper restaurantMapper, ScrappingService scrappingService) {
+    public RestaurantService(RestaurantRepository repository, RestaurantMapper restaurantMapper) {
         this.repository = repository;
         this.restaurantMapper = restaurantMapper;
-        this.scrappingService =  scrappingService;
     }
 
     public List<RestaurantEntity> getAllRestaurants() throws Exception {
