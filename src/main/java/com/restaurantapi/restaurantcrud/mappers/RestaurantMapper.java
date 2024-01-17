@@ -42,6 +42,7 @@ public final class RestaurantMapper {
         entity.setGastronomy(model.getGastronomy());
         entity.setRating(model.getRating());
         entity.setPrice(model.getPrice());
+        entity.setImageUrl(model.getImageUrl());
 
         return entity;
     }
@@ -54,6 +55,7 @@ public final class RestaurantMapper {
         model.setGastronomy(entity.getGastronomy());
         model.setRating(entity.getRating());
         model.setPrice(entity.getPrice());
+        model.setImageUrl(entity.getImageUrl());
 
         return model;
     }

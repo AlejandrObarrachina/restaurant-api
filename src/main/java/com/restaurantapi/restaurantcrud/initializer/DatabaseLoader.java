@@ -19,6 +19,6 @@ public class DatabaseLoader implements CommandLineRunner {
 
     @Override
     public void run(String... strings) {
-        this.repository.save(new RestaurantEntity("Jaleby Baby", new AddressEntity("C/ Verdi", 15, "Barcelona", "08025") , "Indian", 4, 3));
+        this.repository.save(new RestaurantEntity("Jaleby Baby", new AddressEntity("C/ Verdi", 15, "Barcelona", "08025") , "Indian", 4, 3, "https://cdn1.iconfinder.com/data/icons/fast-food-and-restaurant-meals-1/128/Indian_Curry-512.png"));
     }
 }
