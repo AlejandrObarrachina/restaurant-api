@@ -9,7 +9,6 @@ public class Address {
     private Integer number;
     private String city;
     private String postCode;
-
     public Address() {
     }
 

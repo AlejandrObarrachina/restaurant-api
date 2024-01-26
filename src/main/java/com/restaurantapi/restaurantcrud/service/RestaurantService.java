@@ -24,7 +24,6 @@ public class RestaurantService {
 
     public List<RestaurantEntity> getAllRestaurants() throws Exception {
         try {
-
             return repository.findAll();
         } catch (Exception e) {
             throw new Exception(e.getMessage());
@@ -49,7 +48,6 @@ public class RestaurantService {
         }
     }
 
-
     public void updateRestaurant(Long id, Restaurant updatedRestaurant) throws Exception {
         try {
             RestaurantEntity oldRestaurant = repository.findById(id).orElseThrow(() -> new IdNotFoundException(id));
@@ -68,9 +66,10 @@ public class RestaurantService {
 
     public void deleteRestaurant(Long id) throws Exception {
         try {
+            repository.findById(id).orElseThrow(() -> new IdNotFoundException(id));
             repository.deleteById(id);
-        } catch (Exception e) {
-            throw new Exception(e.getMessage());
+        } catch (IdNotFoundException e) {
+            throw new IdNotFoundException(id);
         }
     }
 
@@ -91,6 +90,5 @@ public class RestaurantService {
             restaurant.setImageUrl("https://cdni.iconscout.com/illustration/premium/thumb/spanish-food-6771837-5650000.png?f=webp");
         }
     }
-
 
 }

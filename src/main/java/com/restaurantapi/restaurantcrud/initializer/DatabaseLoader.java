@@ -1,7 +1,5 @@
 package com.restaurantapi.restaurantcrud.initializer;
 
-import com.restaurantapi.restaurantcrud.model.Address;
-import com.restaurantapi.restaurantcrud.model.Restaurant;
 import com.restaurantapi.restaurantcrud.model.entities.AddressEntity;
 import com.restaurantapi.restaurantcrud.model.entities.RestaurantEntity;
 import com.restaurantapi.restaurantcrud.repository.RestaurantRepository;
@@ -19,6 +17,6 @@ public class DatabaseLoader implements CommandLineRunner {
 
     @Override
     public void run(String... strings) {
-        this.repository.save(new RestaurantEntity("Jaleby Baby", new AddressEntity("C/ Verdi", 15, "Barcelona", "08025") , "Indian", 4, 3, "https://cdn1.iconfinder.com/data/icons/fast-food-and-restaurant-meals-1/128/Indian_Curry-512.png"));
+       // this.repository.save(new RestaurantEntity("Jaleby Baby", new AddressEntity("C/ Verdi", 15, "Barcelona", "08025") , "Indian", 4, 3, "https://cdn1.iconfinder.com/data/icons/fast-food-and-restaurant-meals-1/128/Indian_Curry-512.png"));
     }
 }
